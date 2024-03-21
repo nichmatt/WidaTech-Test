@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import formatRupiah from "../../helper/convert-to-rupiah";
 import { totalPrice } from "../../helper/total-price";
 
 /* eslint-disable react/prop-types */
 export default function ProductList(props) {
-  const { selectedProduct } = props;
+  const { selectedProduct, setTotalPrice } = props;
+
+  useEffect(() => {
+    setTotalPrice(totalPrice(selectedProduct));
+  }, [selectedProduct]);
 
   return (
     <>

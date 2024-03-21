@@ -10,10 +10,10 @@ function Layout() {
           <Navbar />
         </div>
         <div className="flex w-screen">
-          <div className="min-w-[300px] shadow-md h-[90vh] pt-3 ">
+          <div className="min-w-[300px] w-[15%] shadow-md h-[90vh] pt-3 ">
             <SideNav />
           </div>
-          <div className="no-scrollbar h-[90vh] min-w-[1000px] w-screen overflow-auto">
+          <div className="h-[90vh] min-w-[1000px] w-[85%] overflow-auto">
             <div>
               <Outlet />
             </div>
