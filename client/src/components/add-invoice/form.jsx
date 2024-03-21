@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import products from "../../assets/product-data/product.json";
 import ProductList from "./product-list";
 import { stringOfSelectedProduct } from "../../helper/string-of-selected-product";
+import formatRupiah from "../../helper/convert-to-rupiah";
 
 export default function FormInvoice() {
   const [name, setName] = useState("");
@@ -174,7 +175,9 @@ export default function FormInvoice() {
                   </div>
                   <div className="flex gap-5">
                     <div>
-                      <p className="text-[14px] text-[gray]">Rp {item.price}</p>
+                      <p className="text-[14px] text-[gray]">
+                        {formatRupiah(item.price)}
+                      </p>
                     </div>
                     <div>
                       <p className="text-[14px] text-[gray]">

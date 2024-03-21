@@ -1,3 +1,4 @@
+import formatRupiah from "../../helper/convert-to-rupiah";
 import { totalPrice } from "../../helper/total-price";
 
 /* eslint-disable react/prop-types */
@@ -19,7 +20,7 @@ export default function ProductList(props) {
                 key={item}
                 className="h-[70px] flex gap-3 justify-between items-center p-3 hover:bg-[lightgray] cursor-pointer transition-all"
                 onClick={() => {
-                  onClickProduct(item);
+                  // onClickProduct(item);
                 }}
               >
                 <div className="flex justify-center items-center gap-5">
@@ -34,7 +35,9 @@ export default function ProductList(props) {
                 </div>
                 <div className="flex gap-5">
                   <div>
-                    <p className="text-[14px] text-[gray]">Rp {item.price}</p>
+                    <p className="text-[14px] text-[gray]">
+                      {formatRupiah(item.price)}
+                    </p>
                   </div>
                   <div>
                     <p className="text-[14px] text-[gray]">Qty: {item.qty}</p>
@@ -44,7 +47,7 @@ export default function ProductList(props) {
             ))}
           <div className="flex justify-end m-5">
             <p className="text-[15px] text-[1e1e1e] font-semibold">
-              Total: Rp{totalPrice(selectedProduct)}
+              Total: {formatRupiah(totalPrice(selectedProduct))}
             </p>
           </div>
         </div>

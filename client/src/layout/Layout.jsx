@@ -13,7 +13,7 @@ function Layout() {
           <div className="min-w-[300px] shadow-md h-[90vh] pt-3 ">
             <SideNav />
           </div>
-          <div className="no-scrollbar h-[90vh] min-w-[1000px] overflow-auto">
+          <div className="no-scrollbar h-[90vh] min-w-[1000px] w-screen overflow-auto">
             <div>
               <Outlet />
             </div>

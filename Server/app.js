@@ -18,9 +18,16 @@ app.get("/", (req, res) => {
 // Handle get invoices
 app.get("/invoices", async (req, res) => {
   try {
-    const invoices = await Invoice.findAll();
+    const page = req.query.p - 1 || 0;
+    console.log(req.query.p);
+    const offset = page * 8;
+    const { rows: invoices, count: totalData } = await Invoice.findAndCountAll({
+      offset,
+      limit: 8,
+    });
     console.log(invoices);
-    res.status(200).json({ invoices });
+    let count = Math.ceil(totalData / 8);
+    res.status(200).json({ invoices, count, totalData });
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Internal Server Error" });
