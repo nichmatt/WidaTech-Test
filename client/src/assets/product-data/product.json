@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Acoustic Guitar",
+    "picture": "https://i.pinimg.com/564x/35/a7/ec/35a7ec61bdf29f1aa6d410264c38c05b.jpg",
+    "stock": 20,
+    "price": 3000000
+  },
+  {
+    "id": 2,
+    "name": "Electric Guitar",
+    "picture": "https://i.pinimg.com/564x/35/a7/ec/35a7ec61bdf29f1aa6d410264c38c05b.jpg",
+    "stock": 15,
+    "price": 5000000
+  },
+  {
+    "id": 3,
+    "name": "Violin",
+    "picture": "https://i.pinimg.com/564x/35/a7/ec/35a7ec61bdf29f1aa6d410264c38c05b.jpg",
+    "stock": 10,
+    "price": 4000000
+  },
+  {
+    "id": 4,
+    "name": "Piano",
+    "picture": "https://i.pinimg.com/564x/35/a7/ec/35a7ec61bdf29f1aa6d410264c38c05b.jpg",
+    "stock": 5,
+    "price": 10000000
+  },
+  {
+    "id": 5,
+    "name": "Drum Set",
+    "picture": "https://i.pinimg.com/564x/35/a7/ec/35a7ec61bdf29f1aa6d410264c38c05b.jpg",
+    "stock": 8,
+    "price": 7000000
+  },
+  {
+    "id": 6,
+    "name": "Saxophone",
+    "picture": "https://i.pinimg.com/564x/35/a7/ec/35a7ec61bdf29f1aa6d410264c38c05b.jpg",
+    "stock": 12,
+    "price": 6000000
+  },
+  {
+    "id": 7,
+    "name": "Microphone",
+    "picture": "https://i.pinimg.com/564x/35/a7/ec/35a7ec61bdf29f1aa6d410264c38c05b.jpg",
+    "stock": 25,
+    "price": 1000000
+  },
+  {
+    "id": 8,
+    "name": "Keyboard",
+    "picture": "https://i.pinimg.com/564x/35/a7/ec/35a7ec61bdf29f1aa6d410264c38c05b.jpg",
+    "stock": 18,
+    "price": 2500000
+  },
+  {
+    "id": 9,
+    "name": "Harmonica",
+    "picture": "https://i.pinimg.com/564x/35/a7/ec/35a7ec61bdf29f1aa6d410264c38c05b.jpg",
+    "stock": 30,
+    "price": 500000
+  },
+  {
+    "id": 10,
+    "name": "Cello",
+    "picture": "hhttps://i.pinimg.com/564x/35/a7/ec/35a7ec61bdf29f1aa6d410264c38c05b.jpg",
+    "stock": 7,
+    "price": 8000000
+  }
+]
