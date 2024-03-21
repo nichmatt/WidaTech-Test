@@ -23,7 +23,7 @@ const MyChartComponent = () => {
         {
           label: `Sales revenue (${chartType})`,
           data: data.data,
-          backgroundColor: [],
+          backgroundColor: ["#4235f3", "gray"],
           borderWidth: 1,
         },
       ],

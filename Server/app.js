@@ -4,6 +4,8 @@ const port = 3002;
 const cors = require("cors");
 const Sequelize = require("sequelize");
 const { Invoice } = require("./models");
+const { timestampToDate } = require("./helper/date-converter");
+const { getMonthName } = require("./helper/get-month");
 
 app.use(cors());
 app.use(express.json());
@@ -52,10 +54,11 @@ app.get("/revenue/monthly", async (req, res) => {
   try {
     const monthlyRevenue = await Invoice.findAll({
       attributes: [
-        [Sequelize.literal('EXTRACT(MONTH FROM "date")'), "month"],
+        [Sequelize.literal("TO_CHAR(\"date\", 'YYYY-MM')"), "month"],
         [Sequelize.fn("SUM", Sequelize.col("totalPrice")), "totalRevenue"],
       ],
-      group: [Sequelize.literal('EXTRACT(MONTH FROM "date")')],
+      group: [Sequelize.literal("TO_CHAR(\"date\", 'YYYY-MM')")],
+      order: Sequelize.literal("TO_CHAR(\"date\", 'YYYY-MM')"),
     });
 
     let label = [];
@@ -64,7 +67,7 @@ app.get("/revenue/monthly", async (req, res) => {
     console.log(monthlyRevenue);
 
     monthlyRevenue?.forEach((el) => {
-      label.push(el.dataValues.month);
+      label.push(getMonthName(el.dataValues.month));
       data.push(el.dataValues.totalRevenue);
     });
 
@@ -95,7 +98,7 @@ app.get("/revenue/daily", async (req, res) => {
     let data = [];
 
     dailyRevenue?.forEach((el) => {
-      label.push(el.dataValues.date);
+      label.push(timestampToDate(el.dataValues.date));
       data.push(el.dataValues.totalDailyRevenue);
     });
 
